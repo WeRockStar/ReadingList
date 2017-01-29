@@ -11,3 +11,4 @@ logging:
 spring:
   thymeleaf:
     cache: false
+
