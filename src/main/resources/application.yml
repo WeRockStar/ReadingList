@@ -7,6 +7,7 @@ logging:
   path: /var/logs/
   file: BookWorm.log
 
+# thymeleaf cache by default
 spring:
   thymeleaf:
     cache: false
