@@ -1,29 +1,27 @@
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/html">
+<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <title>Reading List</title>
-    <link rel="stylesheet" href="@{/style.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/style.css}"/>
 </head>
 <body>
 <h2>Your Reading List</h2>
-<div unless="${#lists.isEmpty(books)}">
-    <dl each="book : ${books}">
+<div th:unless="${#lists.isEmpty(books)}">
+    <dl th:each="book : ${books}">
         <dt class="bookHeadline">
-            <span text="${book.title}">Title</span> by
-            <span text="${book.author}">Author</span>
-            (ISBN: <span text="${book.isbn}">ISBN</span>)
+            <span th:text="${book.title}">Title</span> by
+            <span th:text="${book.author}">Author</span>
+            (ISBN: <span th:text="${book.isbn}">ISBN</span>)
         </dt>
         <dd class="bookDescription">
-            <span if="${book.description}" text="${book.description">
-                Description
-            </span>
-            <span if="${book.description eq null}">No description available</span>
+            <span th:if="${book.description}" th:text="${book.description}">Description</span>
+            <span th:if="${book.description eq null}">No description available</span>
         </dd>
     </dl>
 </div>
-<div if="${#lists.isEmpty(books)}">
-    <p>You have no books in your book lsit</p>
+<div th:if="${#lists.isEmpty(books)}">
+    <p>You have no books in your book list</p>
 </div>
 <hr/>
 
