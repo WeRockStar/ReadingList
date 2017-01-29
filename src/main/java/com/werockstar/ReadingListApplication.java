@@ -4,8 +4,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /*
-	@SpringBootApplication
+	@SpringBootApplication, Combines(@Configuration, @ComponentScan, @EnableAutoConfiguration)
 	Enable component-scanning and Auto configuration
+
  */
 @SpringBootApplication
 public class ReadingListApplication {
