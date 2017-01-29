@@ -4,6 +4,8 @@ logging:
     org:
       springframework:
         security: debug
+  path: /var/logs/
+  file: BookWorm.log
 
 spring:
   thymeleaf:
