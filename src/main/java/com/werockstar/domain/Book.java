@@ -1,4 +1,4 @@
-package com.werockstar;
+package com.werockstar.domain;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
