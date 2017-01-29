@@ -28,7 +28,7 @@ public class ReadingListController {
             model.addAttribute("books", readingList);
         }
 
-        return "readingList";
+        return "readingList"; // templates/readingList.html
     }
 
     @RequestMapping(value = "/{reader}", method = RequestMethod.POST)

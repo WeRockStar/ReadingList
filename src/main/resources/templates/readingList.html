@@ -1,10 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <title>Reading List</title>
+    <link rel="stylesheet" href="@{/style.css}"/>
 </head>
 <body>
+<h2>Your Reading List</h2>
+<div unless="${#lists.isEmpty(books)}">
+    <dl each="book : ${books}">
+        <dt class="bookHeadline">
+            <span text="${book.title}">Title</span> by
+            <span text="${book.author}">Author</span>
+            (ISBN: <span text="${book.isbn}">ISBN</span>)
+        </dt>
+        <dd class="bookDescription">
+            <span if="${book.description}" text="${book.description">
+                Description
+            </span>
+            <span if="${book.description eq null}">No description available</span>
+        </dd>
+    </dl>
+</div>
+<div if="${#lists.isEmpty(books)}">
+    <p>You have no books in your book lsit</p>
+</div>
+<hr/>
 
+<h3>Add a book</h3>
+<form method="POST">
+    <label for="title">Title:</label>
+    <input type="text" name="title" size="50"/> <br/>
+    <label for="author">Author:</label>
+    <input type="text" name="author" size="50"/> <br/>
+    <label for="isbn">ISBN:</label>
+    <input name="isbn" size="15"/> <br/>
+    <label for="description">Description</label>
+    <textarea name="description" cols="80" rows="5"></textarea><br/>
+    <input type="submit"/>
+</form>
 </body>
 </html>
