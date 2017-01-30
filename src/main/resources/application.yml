@@ -1,11 +1,11 @@
-logging:
-  level:
-    root: warn
-    org:
-      springframework:
-        security: debug
-  path: /var/logs/
-  file: BookWorm.log
+#logging:
+#  level:
+#    root: warn
+#    org:
+#      springframework:
+#        security: debug
+#  path: /var/logs/
+#  file: BookWorm.log
 
 # thymeleaf cache by default
 spring:
