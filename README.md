@@ -1,1 +1,1 @@
-#### Spring in Action book
+#### Spring Boot in Action book
